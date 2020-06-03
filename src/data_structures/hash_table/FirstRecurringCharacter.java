@@ -29,7 +29,7 @@ public class FirstRecurringCharacter {
   }
 
   public static Object getFirstRecurringObjectBetter2(Object[] inputArray) {
-    HashSet<Object> map = new HashSet<>(Arrays.asList(inputArray)); //Filling the hash table before checking if item exists
+    HashSet<Object> map = new HashSet<>(Arrays.asList(inputArray)); //Filling the hash table before checking if the item exist
     for (Object obj : inputArray) {
       if (map.contains(obj)) {
         return obj;

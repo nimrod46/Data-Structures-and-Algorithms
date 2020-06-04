@@ -24,6 +24,9 @@ public class MySinglyLinkedList {
   }
 
   public void printList() {
+    if(head == null) {
+      return;
+    }
     MySinglyLinkedNode currentNode = head;
     System.out.print(currentNode.getValue());
     currentNode = currentNode.getNext();

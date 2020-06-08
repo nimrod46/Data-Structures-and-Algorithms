@@ -1,13 +1,13 @@
 package algorithms.sorting;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class InsertionSort {
 
   public static Integer[] insertionSort(Integer[] array) {
-    List<Integer> list = new ArrayList<>(Arrays.asList(array));
+    List<Integer> list = new LinkedList<>(Arrays.asList(array)); //Using linked list so shifting will be efficient
     for (int i = 1; i < list.size(); i++) { //Fixed: i start at i = 1
       if (list.get(i) <= list.get(0)) { //Fixed: duplicate values sort by changing  to "<="
                                         //Checking if current number is suppose to be first

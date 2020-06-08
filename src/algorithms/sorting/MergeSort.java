@@ -27,7 +27,7 @@ public class MergeSort {
     int leftIndex = 0;
     int rightIndex = 0;
     while (leftIndex < left.size() && rightIndex < right.size()) { //Keep merging until we done with one of the sides
-      if (left.get(leftIndex) <= right.get(rightIndex)) { //Fixed: "<" to "<=", this what makes the merge sort stable
+      if (left.get(leftIndex) <= right.get(rightIndex)) { //Fixed: "<" to "<=", this what makes the merge sort "stable"
         merged.add(left.get(leftIndex));
         leftIndex++;
       } else {

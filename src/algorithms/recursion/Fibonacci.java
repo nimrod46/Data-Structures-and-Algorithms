@@ -8,11 +8,22 @@ public class Fibonacci {
 
 //For example: fibonacciRecursive(6) should return 8
 
+  static int num = 0;
   public static int fibonacciRecursively(int n) { //O(2^n)
     if(n < 2) {
       return n;
     }
     return  fibonacciRecursively(n - 1) + fibonacciRecursively(n - 2);
+  }
+
+  static int fibonacciRecursively(int n, int val, int prev) { //O(n)
+    if (n == 0) {
+      return prev;
+    }
+    if (n == 1) {
+      return val;
+    }
+    return fibonacciRecursively(n - 1, val + prev, val);
   }
 
   public static int fibonacciIteratively(int n) { //O(n)
@@ -31,7 +42,10 @@ public class Fibonacci {
   }
 
   public static void main(String[] args) {
-    System.out.println(fibonacciIteratively(8));
-    System.out.println(fibonacciRecursively(8));
+    num
+        = 0;
+    System.out.println(fibonacciIteratively(10));
+    System.out.println(fibonacciRecursively(40, 1 , 0));
+    System.out.println(fibonacciRecursively(100));
   }
 }

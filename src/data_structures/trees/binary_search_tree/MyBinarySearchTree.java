@@ -1,6 +1,17 @@
 package data_structures.trees.binary_search_tree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class MyBinarySearchTree {
+
+  enum SearchType {
+    IN_ORDER,
+    PRE_ORDER,
+    POST_ORDER
+  }
 
   private MyBinaryNode root;
 
@@ -48,7 +59,7 @@ public class MyBinarySearchTree {
     return null;
   }
 
-  public void remove(int value) {
+   public void remove(int value) {
     if (root == null) {
       return;
     }
@@ -98,6 +109,69 @@ public class MyBinarySearchTree {
     printTree(root);
   }
 
+  public List<Integer> breathFirstSearchIteratively() {
+    MyBinaryNode currentNode = root;
+    List<Integer> list = new ArrayList<>();
+    Queue<MyBinaryNode> queue = new LinkedList<>();
+    queue.add(currentNode);
+
+    while (!queue.isEmpty()) {
+      currentNode = queue.poll();
+      list.add(currentNode.getValue());
+      if(currentNode.getLeft() != null) {
+        queue.add(currentNode.getLeft());
+      }
+
+      if(currentNode.getRight() != null) {
+        queue.add(currentNode.getRight());
+      }
+    }
+    return list;
+  }
+
+  public List<Integer> breathFirstSearchRecursively() {
+    Queue<MyBinaryNode> queue = new LinkedList<>();
+    queue.add(root);
+    return breathFirstSearchRecursively(queue, new ArrayList<>());
+  }
+
+  public List<Integer> depthFirstSearchInOder(SearchType searchType) {
+    return depthFirstSearchInOder(root, new ArrayList<>(), searchType);
+  }
+
+  private List<Integer> depthFirstSearchInOder(MyBinaryNode node, ArrayList<Integer> list, SearchType searchType) {
+    if(searchType == SearchType.PRE_ORDER)
+      list.add(node.getValue());
+    if(node.getLeft() != null) {
+      depthFirstSearchInOder(node.getLeft(), list, searchType);
+    }
+    if(searchType == SearchType.IN_ORDER)
+      list.add(node.getValue());
+    if(node.getRight() != null) {
+      depthFirstSearchInOder(node.getRight(), list, searchType);
+    }
+    if(searchType == SearchType.POST_ORDER)
+      list.add(node.getValue());
+      return list;
+  }
+
+  private List<Integer> breathFirstSearchRecursively(Queue<MyBinaryNode> queue, List<Integer> list) {
+    if (queue.isEmpty()) {
+      return list;
+    }
+    MyBinaryNode currentNode = queue.poll();
+    list.add(currentNode.getValue());
+    if (currentNode.getLeft() != null) {
+      queue.add(currentNode.getLeft());
+    }
+
+    if (currentNode.getRight() != null) {
+      queue.add(currentNode.getRight());
+    }
+    return breathFirstSearchRecursively(queue, list);
+  }
+
+
   private void printTree(MyBinaryNode node) {
     System.out.print(node.getValue());
     System.out.println();
@@ -132,5 +206,9 @@ public class MyBinarySearchTree {
     tree.printTree();
     tree.remove(170);
     tree.printTree();
+    System.out.println("Breath first search " + tree.breathFirstSearchIteratively());
+    System.out.println("Depth first search - in order " + tree.depthFirstSearchInOder(SearchType.IN_ORDER));
+    System.out.println("Depth first search - pre order " + tree.depthFirstSearchInOder(SearchType.PRE_ORDER));
+    System.out.println("Depth first search - post order " + tree.depthFirstSearchInOder(SearchType.POST_ORDER));
   }
 }

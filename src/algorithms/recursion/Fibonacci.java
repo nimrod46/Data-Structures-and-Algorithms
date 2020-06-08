@@ -16,14 +16,14 @@ public class Fibonacci {
     return  fibonacciRecursively(n - 1) + fibonacciRecursively(n - 2);
   }
 
-  static int fibonacciRecursively(int n, int val, int prev) { //O(n)
+  static int fibonacciRecursivelyEfficient(int n, int val, int prev) { //O(n)
     if (n == 0) {
       return prev;
     }
     if (n == 1) {
       return val;
     }
-    return fibonacciRecursively(n - 1, val + prev, val);
+    return fibonacciRecursivelyEfficient(n - 1, val + prev, val);
   }
 
   public static int fibonacciIteratively(int n) { //O(n)
@@ -45,7 +45,7 @@ public class Fibonacci {
     num
         = 0;
     System.out.println(fibonacciIteratively(10));
-    System.out.println(fibonacciRecursively(40, 1 , 0));
-    System.out.println(fibonacciRecursively(100));
+    System.out.println(fibonacciRecursivelyEfficient(50, 1 , 0));
+    System.out.println(fibonacciRecursively(50));
   }
 }

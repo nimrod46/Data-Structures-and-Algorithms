@@ -1,4 +1,4 @@
-package data_structures.linked_list.singly;
+package data_structures.linked_lists.singly;
 
 public class MySinglyLinkedList {
   private MySinglyLinkedNode head;

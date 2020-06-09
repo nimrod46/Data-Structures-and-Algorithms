@@ -1,4 +1,4 @@
-package data_structures.stack.using_array;
+package data_structures.stacks.using_array;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

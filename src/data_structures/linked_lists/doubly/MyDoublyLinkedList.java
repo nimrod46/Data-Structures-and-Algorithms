@@ -1,4 +1,4 @@
-package data_structures.linked_list.doubly;
+package data_structures.linked_lists.doubly;
 
 public class MyDoublyLinkedList {
   private MyDoublyLinkedNode head;

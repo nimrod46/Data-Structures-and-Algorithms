@@ -1,4 +1,4 @@
-package data_structures.linked_list.singly;
+package data_structures.queues.using_linked_list;
 
 public class MySinglyLinkedNode {
 

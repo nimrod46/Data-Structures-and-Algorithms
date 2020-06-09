@@ -1,4 +1,4 @@
-package data_structures.stack.using_linked_list;
+package data_structures.linked_lists.singly;
 
 public class MySinglyLinkedNode {
 

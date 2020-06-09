@@ -1,4 +1,4 @@
-package data_structures.stack.using_linked_list;
+package data_structures.stacks.using_linked_list;
 
 import java.util.EmptyStackException;
 

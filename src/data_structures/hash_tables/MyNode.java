@@ -1,4 +1,4 @@
-package data_structures.hash_table;
+package data_structures.hash_tables;
 
 public class MyNode {
     private String key;

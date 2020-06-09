@@ -1,4 +1,4 @@
-package data_structures.queue.using_linked_list;
+package data_structures.queues.using_linked_list;
 
 import java.util.NoSuchElementException;
 

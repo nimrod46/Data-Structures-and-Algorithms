@@ -1,4 +1,4 @@
-package data_structures.hash_table;
+package data_structures.hash_tables;
 
 import java.util.Arrays;
 import java.util.HashSet;

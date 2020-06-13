@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Stream;
 
-public class Question {
+public class CommonItems {
   /* Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
   For Example:
   const array1 = ['a', 'b', 'c', 'x'];

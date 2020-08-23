@@ -20,7 +20,7 @@ public class InsertionSort {
         if (list.get(i) < list.get(i - 1)) {
           //find where number should go
           for (int j = 1; j < i; j++) {
-            if (list.get(i) > list.get(j - 1) && list.get(i) < list.get(j)) {
+            if (list.get(i) >= list.get(j - 1) && list.get(i) < list.get(j)) {
               //move number to the correct spot
               list.add(j, list.get(i));
               list.remove(i + 1);

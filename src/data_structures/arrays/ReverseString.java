@@ -16,11 +16,9 @@ public class ReverseString {
   }
 
   public static String recursiveReversal (String str) {
-    if (str.length() == 0) {  //breakpoint for recursion
+    if (str.length() == 0)  //breakpoint for recursion
        return "";
-    } else {
-       return (recursiveReversal(str.substring(1)) + str.charAt(0));
-    }
+    return recursiveReversal(str.substring(1)) + str.charAt(0);
   }
 
   public static void main(String[] args) {

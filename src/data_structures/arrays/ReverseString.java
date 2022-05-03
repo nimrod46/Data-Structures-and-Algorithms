@@ -15,8 +15,15 @@ public class ReverseString {
     return new StringBuilder(string).reverse().toString();
   }
 
+  public static String recursiveReversal (String str) {
+    if (str.length() == 0)  //breakpoint for recursion
+       return "";
+    return recursiveReversal(str.substring(1)) + str.charAt(0);
+  }
+
   public static void main(String[] args) {
     System.out.println(ReverseString("123456"));
     System.out.println(ReverseStringWithReelJava("123456"));
+    System.out.println(recursiveReversal("123456"));
   }
 }

@@ -9,11 +9,9 @@ public class MergeSortedArray {
     int j = 0, k = 0;
     for (int i = 0; i < mergedArray.length; i++) {
       if (j != array1.length && (k == array2.length || array1[j] < array2[k])) {
-        mergedArray[i] = array1[j];
-        j++;
+        mergedArray[i] = array1[j++];
       } else {
-        mergedArray[i] = array2[k];
-        k++;
+        mergedArray[i] = array2[k++];
       }
     }
     return mergedArray;

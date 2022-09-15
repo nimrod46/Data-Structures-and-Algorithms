@@ -67,6 +67,10 @@ public class MySinglyLinkedList {
     MySinglyLinkedNode leader = traverseToIndex(index - 1);
     MySinglyLinkedNode nodeToRemove = leader.getNext();
     leader.setNext(nodeToRemove.getNext());
+    
+    if (index == length -1) {
+      tail = leader;
+    }
     length--;
   }
 

@@ -28,16 +28,6 @@ public class FirstRecurringCharacter {
     return null;
   }
 
-  public static Object getFirstRecurringObjectBetter2(Object[] inputArray) {
-    HashSet<Object> map = new HashSet<>(Arrays.asList(inputArray)); //Filling the hash table before checking if the item exist
-    for (Object obj : inputArray) {
-      if (map.contains(obj)) {
-        return obj;
-      }
-    }
-    return null;
-  }
-
   public static void main(String[] args) {
     Object[] arr = {1,5,8,5,1,8,8,7,4,4,10};
     System.out.println(getFirstRecurringObjectBetter(arr));

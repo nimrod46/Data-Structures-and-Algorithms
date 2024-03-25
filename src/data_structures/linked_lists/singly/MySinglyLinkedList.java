@@ -61,6 +61,7 @@ public class MySinglyLinkedList {
     index = wrapIndex(index);
     if(index == 0) {
       head = head.getNext();
+      length--;
       return;
     }
 

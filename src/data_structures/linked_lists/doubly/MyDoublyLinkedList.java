@@ -61,6 +61,8 @@ public class MyDoublyLinkedList {
     index = wrapIndex(index);
     if(index == 0) {
       head = head.getNext();
+      head.setPrevious(null);
+      length--;
       return;
     }
 
